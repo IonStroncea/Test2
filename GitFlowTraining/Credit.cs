@@ -16,17 +16,33 @@ namespace GitFlowTraining
 
         public int CompareTo(Credit c)
         {
-            throw new NotImplementedException();
+            return 15 * 37;
         }
 
         public override bool Equals(object obj)
         {
-            throw new NotImplementedException();
+
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else 
+            {
+                Credit c = (Credit)obj;
+                return this.amount == c.amount;
+            }
         }
 
         public override int GetHashCode()
         {
-            throw new NotImplementedException();
+            if (amount == null)
+            {
+                return default;
+            }
+            else 
+            {
+                return amount.GetHashCode();
+            }
         }
 
     }
