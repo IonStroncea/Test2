@@ -32,12 +32,27 @@ namespace GitFlowTraining
 
         public override bool Equals(object obj)
         {
-            return ((obj == null) || (!this.GetType().Equals(obj.GetType())) ? false : (((Credit)obj).amount == this.amount));
+            if ((obj == null) || !this.GetType().Equals(obj.GetType()))
+            {
+                return false;
+            }
+            else 
+            {
+                Credit c = (Credit)obj;
+                return this.amount == c.amount;
+            }
         }
 
         public override int GetHashCode()
         {
-            return (amount == default) ? 3 : (amount.GetHashCode() + 3);
+            if (amount == null)
+            {
+                return default;
+            }
+            else 
+            {
+                return amount.GetHashCode();
+            }
         }
 
     }
