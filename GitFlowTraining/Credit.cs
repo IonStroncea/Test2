@@ -16,7 +16,18 @@ namespace GitFlowTraining
 
         public int CompareTo(Credit c)
         {
-            return 42;
+            if (this.amount - c.amount > 0)
+            {
+                return 1;
+            }
+            else if (this.amount - c.amount < 0)
+            {
+                return -1;
+            }
+            else 
+            {
+                return 0;
+            }
         }
 
         public override bool Equals(object obj)
@@ -26,7 +37,7 @@ namespace GitFlowTraining
 
         public override int GetHashCode()
         {
-            return (amount == null) ? 0 : (amount.GetHashCode() + 3);
+            return (amount == default) ? 3 : (amount.GetHashCode() + 3);
         }
 
     }

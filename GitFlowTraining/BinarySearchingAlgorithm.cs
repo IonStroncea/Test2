@@ -31,15 +31,13 @@ namespace GitFlowTraining
                 if (arr[middle].Equals(e))
                     return arr[middle];
 
-                T result;
-
-                if (arr[middle].GetHashCode() > e.GetHashCode())
+                if (arr[middle].CompareTo(e) > 0)
                 {
                     return BinarySearch(arr, l, middle - 1, e);
                 }
                 else 
                 {
-                    return BinarySearch(arr, middle +1, r, e);
+                    return BinarySearch(arr, middle + 1, r, e);
                 }
                 
             }
