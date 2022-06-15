@@ -16,12 +16,22 @@ namespace GitFlowTraining
 
         public int CompareTo(Credit c)
         {
-            return 15 * 37;
+            if (this.amount - c.amount > 0)
+            {
+                return 1;
+            }
+            else if (this.amount - c.amount < 0)
+            {
+                return -1;
+            }
+            else 
+            {
+                return 0;
+            }
         }
 
         public override bool Equals(object obj)
         {
-
             if ((obj == null) || !this.GetType().Equals(obj.GetType()))
             {
                 return false;
